@@ -2,6 +2,7 @@
 title: "How to plan exam revision without cramming"
 description: "Work backwards from your exam dates to build a realistic revision plan, with spaced practice and time to rest."
 date: "2026-11-05"
+tags: ["planning", "exams", "study"]
 ---
 
 Cramming feels productive, but it fades fast. A plan that starts early and works backwards from each exam date is calmer and more effective.
@@ -12,7 +13,7 @@ Write down the **date, time and venue** of each exam. Seeing them together shows
 
 ## Work backwards
 
-For each exam, count the weeks you have. Then split the syllabus into topics and spread them across those weeks, leaving the final week for past papers and gaps.
+For each exam, count the weeks you have. Then split the syllabus into topics and spread them across those weeks, leaving the final week for past papers and gaps. Your [class timetable](/blog/how-to-make-a-class-timetable) shows where the free blocks are.
 
 ## Use short, repeated sessions
 
@@ -24,7 +25,7 @@ Close your notes and write down what you remember. Do past papers under timed co
 
 ## Build in rest
 
-Plan one lighter day each week and keep your sleep steady. Tired revision is slow revision.
+Plan one lighter day each week and keep your sleep steady. Tired revision is slow revision. Keep coursework moving as well, with these [homework planner tips](/blog/homework-planner-tips).
 
 ## Set reminders early
 

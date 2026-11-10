@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppStoreButton from "@/components/AppStoreButton";
-import { getAllPosts, getPost } from "@/lib/posts";
+import { getAllPosts, getPost, getRelatedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -26,6 +26,7 @@ export default async function PostPage({ params }) {
   const { slug } = await params;
   if (!getAllPosts().some((p) => p.slug === slug)) notFound();
   const { meta, body } = await getPost(slug);
+  const related = getRelatedPosts(slug, 2);
 
   const jsonLd = [
     {
@@ -69,6 +70,21 @@ export default async function PostPage({ params }) {
         <p className="mb-4 text-ink-soft">Class Timetable sends a reminder before every class and deadline, and syncs with iCloud.</p>
         <AppStoreButton placement={`post-${slug}`} />
       </aside>
+      {related.length > 0 && (
+        <section className="mt-14" aria-labelledby="related-guides">
+          <h2 id="related-guides" className="mb-2 text-2xl font-extrabold">Related guides</h2>
+          <ul>
+            {related.map((p) => (
+              <li key={p.slug} className="border-t-[1.5px] border-ink py-5">
+                <Link href={`/blog/${p.slug}`} className="group block">
+                  <h3 className="mb-1 text-xl font-bold underline decoration-transparent decoration-4 underline-offset-4 group-hover:decoration-highlighter">{p.title}</h3>
+                  <p className="text-ink-soft">{p.description}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }

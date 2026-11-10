@@ -27,6 +27,10 @@ export const metadata = {
   twitter: { card: "summary_large_image" },
   // Shows Safari's native install banner on iPhone and iPad.
   other: { "apple-itunes-app": `app-id=${site.appId}` },
+  // Google Search Console: set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Vercel (the content value of the verification meta tag).
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
 export const viewport = { themeColor: "#fafbff" };
