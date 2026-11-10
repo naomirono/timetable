@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-paper: #fafbff;
+  --color-ink: #14213d;
+  --color-ink-soft: #4a5472;
+  --color-brand: #3b6cf6;
+  --color-wash: #e4ebff;
+  --color-highlighter: #ffd93d;
+  --color-coral: #ff6b5b;
+  --color-mint: #bff0d8;
+
+  --animate-drop: drop 0.5s ease backwards;
+  @keyframes drop {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-body: var(--font-figtree), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper font-body text-[1.0625rem] leading-relaxed text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display leading-[1.1] tracking-tight;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
